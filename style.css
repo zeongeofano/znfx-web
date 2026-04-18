@@ -1,0 +1,90 @@
+:root {
+    --bg-color: #101216;
+    --text-main: #F5F5F5;
+    --text-muted: #555555;
+    --accent: #4A6FA5;
+    --card-bg: #1A1D23;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 80px 20px 40px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.tagline {
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 15px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-title {
+    border-bottom: 1px solid #2A2E35;
+    padding-bottom: 10px;
+    margin: 40px 0 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+}
+
+.news-widget {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #2A2E35;
+}
+
+.news-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #2A2E35;
+}
+
+.news-item:last-child { border: none; }
+
+.cta-button {
+    display: block;
+    background: var(--text-muted);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 60px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--accent);
+}
+
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+}
