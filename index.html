@@ -8,11 +8,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
         .hero-gradient { background: radial-gradient(circle at top right, #1e293b, #020617); }
         .social-icon { transition: all 0.3s ease; }
+        /* Animasi kustom untuk teks glow */
+        .text-glow { text-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -21,15 +25,15 @@
         <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
             <div class="text-2xl font-black text-blue-500 tracking-tighter italic">ZNFX</div>
             <div class="hidden md:flex space-x-8 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
-                <a href="#market" class="hover:text-blue-400">Market</a>
+                <a href="#home" class="hover:text-blue-400">Home</a>
                 <a href="#community" class="hover:text-blue-400">Community</a>
                 <a href="#contact" class="hover:text-blue-400">Socials</a>
             </div>
-            <a href="https://t.me/username_telegram_kamu" target="_blank" class="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold">TELEGRAM</a>
+            <a href="https://t.me/ProfitableSignalcomunity" target="_blank" class="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold shadow-lg shadow-blue-500/20">TELEGRAM</a>
         </div>
     </nav>
 
-    <section class="pt-16 hero-gradient text-white">
+    <section id="home" class="pt-16 hero-gradient text-white">
         
         <div class="w-full bg-black/40 border-b border-white/5 py-1">
             <div class="tradingview-widget-container">
@@ -43,78 +47,71 @@
                         { "description": "BTC/USD", "proName": "BITSTAMP:BTCUSD" }
                     ],
                     "showSymbolLogo": true,
-                    "colorTheme": "dark",
-                    "isTransparent": true,
-                    "displayMode": "adaptive",
-                    "locale": "id"
+                    "colorTheme": "dark", "isTransparent": true, "displayMode": "adaptive", "locale": "id"
                 }
                 </script>
             </div>
         </div>
 
-        <div class="max-w-4xl mx-auto text-center px-6 py-20">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                Join the <span class="text-blue-500">Elite Community</span>
+        <div class="max-w-4xl mx-auto text-center px-6 py-28">
+            <h1 data-aos="fade-down" data-aos-duration="1000" class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                Unlock Your <span class="text-blue-500 text-glow">Trading Potential</span>
             </h1>
-            <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-                Analisa pasar real-time dan diskusi strategi bersama ribuan trader profesional di ZNFX Community.
+            <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" class="text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+                Dapatkan akses ke analisa eksklusif dan komunitas trader profesional untuk meningkatkan profitabilitas Anda.
             </p>
-            <a href="#community" class="inline-block bg-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-500 shadow-xl shadow-blue-600/20 transition-all">Gabung Komunitas</a>
+            <div data-aos="zoom-in" data-aos-delay="400">
+                <a href="#community" class="inline-block bg-blue-600 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-blue-500 shadow-xl shadow-blue-600/20 transition-all transform hover:-translate-y-1">Mulai Sekarang</a>
+            </div>
         </div>
     </section>
 
-    <section id="market" class="py-20 px-6 max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold mb-2">Live Market</h2>
-            <p class="text-slate-500">Real-time data monitoring untuk XAUUSD & Major Pairs.</p>
-        </div>
-        
-        <div class="bg-slate-900 rounded-[2rem] p-1 h-[450px] shadow-2xl border border-slate-800 overflow-hidden">
-            <iframe 
-                src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_znfx&symbol=FX_IDC%3AXAUUSD&interval=H1&hidesidetoolbar=1&hidetoptoolbar=1&symboledit=1&saveimage=0&toolbarbg=f1f3f6&theme=dark&style=1&timezone=Etc%2FUTC&studies=%5B%5D&locale=id" 
-                style="width: 100%; height: 100%; border: none;">
-            </iframe>
-        </div>
-    </section>
-
-    <section id="community" class="py-20 bg-white px-6">
+    <section id="community" class="py-24 bg-white px-6">
         <div class="max-w-4xl mx-auto">
-            <div class="bg-slate-950 rounded-[3rem] p-8 md:p-16 text-center text-white relative overflow-hidden card-shadow">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 blur-[80px]"></div>
+            <div data-aos="fade-up" data-aos-duration="1000" class="bg-slate-950 rounded-[3rem] p-10 md:p-20 text-center text-white relative overflow-hidden shadow-2xl border border-white/5">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[100px]"></div>
                 
-                <i class="fa-brands fa-telegram text-6xl text-blue-500 mb-6"></i>
-                <h2 class="text-3xl md:text-4xl font-black mb-4 tracking-tighter uppercase">ZNFX Telegram Community</h2>
-                <p class="text-slate-400 mb-10 text-lg leading-relaxed">
-                    Dapatkan signal gratis, edukasi trading harian, dan koneksi dengan sesama trader ZNFX secara langsung tanpa biaya pendaftaran.
+                <i class="fa-brands fa-telegram text-7xl text-blue-500 mb-8"></i>
+                <h2 class="text-3xl md:text-5xl font-black mb-6 tracking-tighter uppercase leading-tight">ZNFX Telegram Community</h2>
+                <p class="text-slate-400 mb-12 text-lg md:text-xl leading-relaxed">
+                    Bergabunglah dengan grup diskusi kami untuk mendapatkan signal harian, edukasi teknikal, dan update pasar tercepat secara gratis.
                 </p>
                 
-                <a href="https://t.me/username_telegram_kamu" target="_blank" class="inline-block bg-blue-600 text-white px-12 py-5 rounded-2xl font-black text-xl hover:bg-blue-500 shadow-2xl shadow-blue-600/40 transition-all active:scale-95">
-                    JOIN GROUP SEKARANG
+                <a href="https://t.me/ProfitableSignalcomunity" target="_blank" class="inline-block bg-blue-600 text-white px-12 py-6 rounded-2xl font-black text-xl hover:bg-blue-500 shadow-2xl shadow-blue-600/40 transition-all active:scale-95">
+                    JOIN GROUP TELEGRAM
                 </a>
             </div>
         </div>
     </section>
 
     <footer id="contact" class="py-20 border-t border-slate-200 bg-white text-center px-6">
-        <div class="text-3xl font-black italic text-blue-600 mb-2">ZNFX</div>
-        <p class="text-slate-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-10 italic">Analyze. Code. Execute.</p>
+        <div data-aos="fade-up" class="text-3xl font-black italic text-blue-600 mb-2">ZNFX</div>
+        <p data-aos="fade-up" class="text-slate-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-12 italic">Analyze. Code. Execute.</p>
         
-        <div class="flex justify-center gap-6 mb-12">
-            <a href="https://youtube.com/@zeonprofitablesignal" target="_blank" class="social-icon w-14 h-14 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-red-600 hover:text-white shadow-sm">
+        <div class="flex justify-center flex-wrap gap-6 mb-12">
+            <a data-aos="flip-left" data-aos-delay="100" href="https://youtube.com/@zeonprofitablesignal" target="_blank" class="social-icon w-16 h-16 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-red-600 hover:text-white shadow-sm">
                 <i class="fa-brands fa-youtube text-2xl"></i>
             </a>
-            <a href="https://tiktok.com/@zeonprofitablesignal" target="_blank" class="social-icon w-14 h-14 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-black hover:text-white shadow-sm">
+            <a data-aos="flip-left" data-aos-delay="200" href="https://tiktok.com/@zeonprofitablesignal" target="_blank" class="social-icon w-16 h-16 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-black hover:text-white shadow-sm">
                 <i class="fa-brands fa-tiktok text-2xl"></i>
             </a>
-            <a href="https://instagram.com/username" target="_blank" class="social-icon w-14 h-14 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 hover:text-white shadow-sm">
+            <a data-aos="flip-left" data-aos-delay="300" href="https://instagram.com/zeonprofitablesignal" target="_blank" class="social-icon w-16 h-16 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 hover:text-white shadow-sm">
                 <i class="fa-brands fa-instagram text-2xl"></i>
             </a>
         </div>
 
         <div class="text-slate-400 text-[10px] font-medium uppercase tracking-[0.3em]">
-            © 2026 ZNFX Ecosystem. All Rights Reserved.
+            © 2026 ZNFX Ecosystem. Developed with Pride.
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, // Animasi hanya berjalan sekali saat di-scroll
+            mirror: false
+        });
+    </script>
+
 </body>
-</html>
+    </html>
