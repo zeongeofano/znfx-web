@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZNFX - Trading & Technology Ecosystem</title>
+    <title>ZNFX - Trading & Technology</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .hero-gradient { background: radial-gradient(circle at top right, #1e293b, #020617); }
-        .card-shadow { box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3); }
         .social-icon { transition: all 0.3s ease; }
+        iframe { border-radius: 1.5rem; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -28,13 +26,13 @@
                 <a href="#membership" class="hover:text-blue-400">Membership</a>
                 <a href="#contact" class="hover:text-blue-400">Socials</a>
             </div>
-            <button class="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold shadow-lg shadow-blue-500/20">JOIN</button>
+            <button class="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold">JOIN</button>
         </div>
     </nav>
 
-    <section class="pt-24 hero-gradient text-white">
+    <section class="pt-16 hero-gradient text-white">
         
-        <div class="w-full bg-black/40 border-y border-white/5 py-1">
+        <div class="w-full bg-black/40 border-b border-white/5 py-1">
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -44,8 +42,6 @@
                         { "description": "EUR/USD", "proName": "FX:EURUSD" },
                         { "description": "GBP/USD", "proName": "FX:GBPUSD" },
                         { "description": "USD/JPY", "proName": "FX:USDJPY" },
-                        { "description": "AUD/USD", "proName": "FX:AUDUSD" },
-                        { "description": "USD/CAD", "proName": "FX:USDCAD" },
                         { "description": "BTC/USD", "proName": "BITSTAMP:BTCUSD" }
                     ],
                     "showSymbolLogo": true,
@@ -62,81 +58,58 @@
             <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
                 Empowering Your <span class="text-blue-500">Financial Future</span>
             </h1>
-            <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-                Analisa market premium, strategi trading modern, dan ekosistem digital untuk hasil yang lebih presisi.
+            <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+                Analisa pasar real-time dan strategi trading modern untuk hasil yang lebih presisi.
             </p>
-            <div class="flex justify-center gap-4">
-                <a href="#membership" class="bg-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-500 transition-all shadow-xl shadow-blue-600/20">Mulai Belajar</a>
-            </div>
+            <a href="#membership" class="inline-block bg-blue-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-500 shadow-xl shadow-blue-600/20">Mulai Belajar</a>
         </div>
     </section>
 
     <section id="market" class="py-20 px-6 max-w-6xl mx-auto">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-bold mb-2">Live Insight</h2>
-            <p class="text-slate-500">Data pasar real-time langsung dari bursa global.</p>
+            <p class="text-slate-500">Data pasar stabil tanpa gangguan error.</p>
         </div>
         
-        <div class="bg-slate-900 rounded-[2rem] p-4 h-[450px] shadow-2xl border border-slate-800">
-            <div class="tradingview-widget-container h-full">
-                <div id="tradingview_chart" class="h-full"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                <script type="text/javascript">
-                new TradingView.widget({
-                    "autosize": true,
-                    "symbol": "FX_IDC:XAUUSD",
-                    "interval": "H1",
-                    "timezone": "Etc/UTC",
-                    "theme": "dark",
-                    "style": "1",
-                    "locale": "id",
-                    "enable_publishing": false,
-                    "hide_side_toolbar": false,
-                    "allow_symbol_change": true,
-                    "container_id": "tradingview_chart"
-                });
-                </script>
-            </div>
+        <div class="bg-slate-900 rounded-[2rem] p-1 h-[450px] shadow-2xl border border-slate-800 overflow-hidden">
+            <iframe 
+                src="https://widget.tradingeconomics.com/chart?s=xauusd:cur&interval=60&height=450&width=100%25&user=guest" 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                scrolling="no">
+            </iframe>
         </div>
     </section>
 
     <section id="membership" class="py-20 bg-white">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-black uppercase tracking-tighter">Membership Plan</h2>
-                <div class="w-20 h-1.5 bg-blue-600 mx-auto mt-4 rounded-full"></div>
-            </div>
-            
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-black mb-12 uppercase tracking-tighter">Membership Plan</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-50 p-10 rounded-[40px] border border-slate-200 transition-all hover:-translate-y-2">
+                <div class="bg-slate-50 p-10 rounded-[40px] border border-slate-200 text-left">
                     <h3 class="text-xl font-bold mb-1">Standard Access</h3>
-                    <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-6 italic">Entry Level</p>
-                    <div class="text-4xl font-black text-blue-600 mb-8">Rp 2.500.000</div>
-                    <ul class="space-y-4 mb-10 text-slate-600 font-medium text-sm">
+                    <div class="text-4xl font-black text-blue-600 my-6">Rp 2.500.000</div>
+                    <ul class="space-y-4 mb-8 text-slate-600 text-sm">
                         <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Akses Komunitas</li>
                         <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Update Market Mingguan</li>
-                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Tutorial Dasar Dashboard</li>
                     </ul>
-                    <button class="w-full py-4 rounded-2xl border-2 border-slate-900 font-bold hover:bg-slate-900 hover:text-white transition-all text-sm uppercase tracking-widest">Pilih Paket</button>
+                    <button class="w-full py-4 rounded-2xl border-2 border-slate-900 font-bold uppercase text-xs tracking-widest">Pilih Paket</button>
                 </div>
-
-                <div class="bg-slate-950 p-10 rounded-[40px] text-white transition-all hover:-translate-y-2 relative overflow-hidden">
+                <div class="bg-slate-950 p-10 rounded-[40px] text-white text-left relative overflow-hidden">
                     <div class="absolute top-6 right-6 bg-blue-600 text-[10px] font-black px-3 py-1 rounded-full uppercase italic">Terbaik</div>
                     <h3 class="text-xl font-bold mb-1 text-blue-400">VIP Mentorship</h3>
-                    <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-6 italic">Expert Level</p>
-                    <div class="text-4xl font-black mb-8">Rp 7.500.000</div>
-                    <ul class="space-y-4 mb-10 text-slate-300 font-medium text-sm">
+                    <div class="text-4xl font-black my-6">Rp 7.500.000</div>
+                    <ul class="space-y-4 mb-8 text-slate-300 text-sm">
                         <li><i class="fa-solid fa-star text-blue-400 mr-2"></i> Private Coaching 1-on-1</li>
                         <li><i class="fa-solid fa-star text-blue-400 mr-2"></i> Signal Real-time ZNFX</li>
-                        <li><i class="fa-solid fa-star text-blue-400 mr-2"></i> Akses Selamanya</li>
                     </ul>
-                    <button class="w-full py-4 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-all text-sm uppercase tracking-widest shadow-xl shadow-blue-600/40">Join VIP Now</button>
+                    <button class="w-full py-4 rounded-2xl bg-blue-600 text-white font-bold shadow-xl shadow-blue-600/40 uppercase text-xs tracking-widest">Join VIP Now</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="py-20 border-t border-slate-200 bg-white text-center">
+    <footer id="contact" class="py-20 border-t border-slate-200 bg-white text-center px-6">
         <div class="text-3xl font-black italic text-blue-600 mb-2">ZNFX</div>
         <p class="text-slate-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-10 italic">Analyze. Code. Execute.</p>
         
@@ -158,4 +131,4 @@
     </footer>
 
 </body>
-                    </html>
+</html>
