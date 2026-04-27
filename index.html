@@ -3,36 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZNFX | Systematic Trading</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>ZNFX Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: radial-gradient(circle at top right, #1e293b, #020617);
+            color: white;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-blue {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        .active-card {
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.1);
+        }
+    </style>
 </head>
-<body>
+<body class="pb-24">
 
-<header>
-    <div class="logo">ZNFX</div>
-    <p class="tagline">Decoding Markets Through Logic</p>
-</header>
-
-<div class="container">
-    <h2 class="section-title">MARKET NEWS DASHBOARD</h2>
-    <div id="news-container" class="news-widget">
-        <p style="color: #555;">Memuat data pasar...</p>
+    <div class="w-full glass border-b border-white/5">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+                "symbols": [
+                    { "proName": "FX_IDC:XAUUSD", "title": "GOLD" },
+                    { "proName": "BITSTAMP:BTCUSD", "title": "BTC" },
+                    { "proName": "FX:EURUSD", "title": "EURUSD" }
+                ],
+                "colorTheme": "dark",
+                "isTransparent": true,
+                "displayMode": "adaptive",
+                "locale": "id"
+            }
+            </script>
+        </div>
     </div>
 
-    <h2 class="section-title">PHILOSOPHY</h2>
-    <p class="philosophy-text">
-        ZNFX adalah ekosistem trading yang dibangun dengan fokus pada presisi data dan manajemen risiko yang ketat. 
-        Kami menggabungkan keahlian pemrograman untuk analisis pasar yang lebih objektif dan terukur.
-    </p>
+    <div class="max-w-md mx-auto px-5 mt-6">
+        
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-extrabold tracking-tighter text-blue-500 italic">ZNFX</h1>
+            <p class="text-gray-400 text-xs tracking-[0.2em] uppercase mt-1">Market & Tech Solutions</p>
+        </div>
 
-    <a href="https://t.me/ProfitableSignalcomunity" class="cta-button">ACCESS COMMUNITY TERMINAL</a>
-</div>
+        <div class="glass rounded-3xl p-2 mb-8 h-48 overflow-hidden">
+            <div class="tradingview-widget-container h-full">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                {
+                    "symbol": "FX_IDC:XAUUSD",
+                    "width": "100%",
+                    "height": "100%",
+                    "locale": "id",
+                    "dateRange": "1D",
+                    "colorTheme": "dark",
+                    "isTransparent": true,
+                    "autosize": true,
+                    "chartOnly": true
+                }
+                </script>
+            </div>
+        </div>
 
-<footer>
-    &copy; 2026 ZNFX BY ZEON GEOFANO. ALL RIGHTS RESERVED.
-</footer>
+        <div class="flex items-center mb-4">
+            <div class="w-1 h-6 bg-blue-500 rounded-full mr-3"></div>
+            <h2 class="font-bold text-lg">DRIP CLIENT NO ROOT FF</h2>
+        </div>
 
-<script src="script.js"></script>
+        <div class="glass rounded-2xl p-5 mb-8">
+            <div class="bg-blue-600/20 text-blue-400 text-[10px] font-bold py-1 px-3 rounded-full w-max mb-4 uppercase">Product Info</div>
+            <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> All Fitur Hs & ESP</li>
+                <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> All Fitur Brutal</li>
+                <li class="flex items-center"><span class="text-blue-500 mr-2">✓</span> Anti Ban & No Root</li>
+            </ul>
+        </div>
+
+        <h3 class="font-bold text-sm mb-4 text-gray-400 uppercase tracking-widest">Pilih Durasi</h3>
+        <div class="grid grid-cols-2 gap-4 mb-10">
+            <div class="item-card glass p-4 rounded-2xl cursor-pointer transition-all" onclick="updateTotal(this, 20000, '1 Day')">
+                <p class="font-bold text-sm">1 Day</p>
+                <p class="text-green-400 font-bold text-sm mt-1">Rp 20.000</p>
+            </div>
+            <div class="item-card glass p-4 rounded-2xl cursor-pointer transition-all" onclick="updateTotal(this, 60000, '7 Day')">
+                <p class="font-bold text-sm">7 Day</p>
+                <p class="text-green-400 font-bold text-sm mt-1">Rp 60.000</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="fixed bottom-6 left-5 right-5 max-w-md mx-auto">
+        <div class="glass rounded-2xl p-4 flex justify-between items-center glow-blue border-white/20">
+            <div>
+                <p class="text-gray-400 text-[10px] uppercase font-bold">Total Harga</p>
+                <p id="displayPrice" class="text-white font-extrabold text-xl">Rp 0</p>
+            </div>
+            <button onclick="checkout()" class="bg-blue-600 hover:bg-blue-500 px-8 py-3 rounded-xl font-bold transition-all active:scale-90">
+                BELI
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let currentPrice = 0;
+        let currentItem = "";
+
+        function updateTotal(element, price, item) {
+            // Reset style semua card
+            document.querySelectorAll('.item-card').forEach(c => c.classList.remove('active-card'));
+            // Tambahkan style ke yang dipilih
+            element.classList.add('active-card');
+            
+            currentPrice = price;
+            currentItem = item;
+            document.getElementById('displayPrice').innerText = 'Rp ' + price.toLocaleString('id-ID');
+        }
+
+        function checkout() {
+            if (currentPrice === 0) {
+                alert("Silakan pilih paket durasi!");
+                return;
+            }
+            const waLink = `https://wa.me/628123456789?text=Halo ZNFX, saya ingin membeli ${currentItem} seharga Rp ${currentPrice.toLocaleString('id-ID')}`;
+            window.location.href = waLink;
+        }
+    </script>
 </body>
 </html>
